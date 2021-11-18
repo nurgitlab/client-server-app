@@ -7,6 +7,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path>$PROJECT_DIR$/../../../koltron-project/applications/koltron/node_modules/flow-bin/flow-osx-v0.98.1/flow</exe-path>
@@ -23,8 +31,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sandbox/alef-test-task" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,13 +46,25 @@
       <option name="presentableId" value="Default" />
       <updated>1637267437773</updated>
       <workItem from="1637267445501" duration="42000" />
+      <workItem from="1637267489987" duration="5138000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="289" y="270" key="FileChooserDialogImpl" timestamp="1637267485514">
+    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637267956933">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="289" y="270" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1637267485514" />
+    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1637267956933" />
+    <state x="289" y="270" key="FileChooserDialogImpl" timestamp="1637268423258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="289" y="270" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1637268423258" />
+    <state x="10" y="160" key="SettingsEditor" timestamp="1637267502403">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="10" y="160" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1637267502403" />
   </component>
 </project>

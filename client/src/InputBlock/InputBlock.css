@@ -1,0 +1,156 @@
+.title {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    padding: 60px 0 0 0;
+}
+
+.title-kid {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    padding-top: 7px;
+}
+
+.label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: rgba(17, 17, 17, 0.48);
+}
+
+.container {
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.input-style {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+    outline: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #111111;
+}
+
+.king-button {
+    width: 204px;
+    height: 44px;
+    top: 305px;
+    left: 787px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 2px #01A7FD solid;
+    cursor: pointer;
+
+}
+
+.plus {
+    color: #01A7FD;
+    font-size: 24px;
+    font-weight: 900;
+    align-items: center;
+    text-align: center;
+}
+
+.add-kid {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+    color: #01A7FD;
+}
+
+.title-down {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.title-button {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.show-kids {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px 10px 0;
+}
+
+.delete-button {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+    display: flex;
+    justify-content: flex-end;
+    color: #01A7FD;
+    align-items: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.all-kid-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-kid-info {
+    display: flex;
+    width: 100%;
+}
+
+.save-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    width: 118px;
+    height: 44px;
+    left: 375px;
+    top: 512px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+    background: #01A7FD;
+    border-radius: 100px;
+
+    margin-bottom: 30px;
+}
