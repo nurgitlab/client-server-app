@@ -2,20 +2,32 @@ import React from "react";
 import "./InputBlock.css";
 
 
+const defaultFlat = {
+  id: null,
+  flatName: "",
+  waterCounterInfo: null,
+  electDay: null,
+  electNight: null,
+  gasCounterInfo: null
+};
+
 export const InputBlock = () => {
-  const [flatInfo, setFlatInfo] = React.useState({
-    flatName: "",
-    waterCounterInfo: null,
-    electDay: null,
-    electNight: null,
-    gasCounterInfo: null
-  });
+  const [flatInfo, setFlatInfo] = React.useState(defaultFlat);
 
   const inputFlatInfo = (e) => {
     setFlatInfo({
       ...flatInfo,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const sendInfoFromStateToServer = () => {
+    setFlatInfo({
+      ...flatInfo,
+      id:
+    })
+
+    setFlatInfo(defaultFlat);
   };
 
   return (
@@ -87,7 +99,7 @@ export const InputBlock = () => {
 
       <div
         className={"save-button"}
-        // onClick={saveToRedux}
+        onClick={sendInfoFromStateToServer}
       >
         Сохранить
       </div>

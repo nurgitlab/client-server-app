@@ -54,10 +54,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637267956933">
+    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637280112848">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1637267956933" />
+    <state x="239" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1637280112848" />
     <state x="289" y="270" key="FileChooserDialogImpl" timestamp="1637268423258">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -66,5 +66,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="10" y="160" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1637267502403" />
+    <state x="142" y="242" key="run.anything.popup" timestamp="1637282259202">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="142" y="242" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1637282259202" />
   </component>
 </project>
