@@ -1,7 +1,7 @@
 import React from "react";
 import "./InputBlock.css";
-import { v4 as uuidv4 } from 'uuid';
-
+import { GET_ALL_FLATS } from "../query/flat";
+import {useQuery} from "@apollo/client";
 
 const defaultFlat = {
   id: null,
@@ -14,6 +14,16 @@ const defaultFlat = {
 
 export const InputBlock = () => {
   const [flatInfo, setFlatInfo] = React.useState(defaultFlat);
+  const [flats, setFlats] = React.useState([]);
+
+  const {data, loading, error} = useQuery(GET_ALL_FLATS);
+
+  console.log(data);
+  React.useEffect(() => {
+    console.log(data);
+  }, [data]);
+  console.log(data);
+
 
   const inputFlatInfo = (e) => {
     setFlatInfo({
@@ -23,10 +33,6 @@ export const InputBlock = () => {
   };
 
   const sendInfoFromStateToServer = () => {
-    setFlatInfo({
-      ...flatInfo,
-      id: uuidv4()
-    })
 
     // setFlatInfo(defaultFlat);
   };
@@ -105,7 +111,6 @@ export const InputBlock = () => {
         Сохранить
       </div>
 
-
       <div className={"container"}>
         <div className={"label"}>
           {flatInfo.flatName}
@@ -122,7 +127,28 @@ export const InputBlock = () => {
         <div className={"label"}>
           {flatInfo.gasCounterInfo}
         </div>
+      </div>
 
+      <div
+        className={"save-button"}
+        onClick={sendInfoFromStateToServer}
+      >
+        Получить
+      </div>
+
+      <div className={"container"}>
+        {flats.map((showFlatInfo) => {
+          return (
+            <div>
+              <div className={"label"}>
+                {showFlatInfo.id}
+              </div>
+              <div className={"label"}>
+                {showFlatInfo.flatName}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
     </div>
