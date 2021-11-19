@@ -5,19 +5,19 @@ const schema = buildSchema(`
     type Flat {
         id: ID
         flatName: String
-        waterCounterInfo: Int
-        electDay: Int
-        electNight: Int
-        gasCounterInfo: Int
+        waterCounterInfo: String
+        electDay: String
+        electNight: String
+        gasCounterInfo: String
     }
     
     input FlatInput {
         id: ID
         flatName: String
-        waterCounterInfo: Int
-        electDay: Int
-        electNight: Int
-        gasCounterInfo: Int
+        waterCounterInfo: String
+        electDay: String
+        electNight: String
+        gasCounterInfo: String
     }
     
     type Query {

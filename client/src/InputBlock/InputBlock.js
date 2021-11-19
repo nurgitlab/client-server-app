@@ -1,31 +1,50 @@
 import React from "react";
 import "./InputBlock.css";
 import { GET_ALL_FLATS } from "../query/flat";
-import {useQuery} from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
+import { CREATE_FLAT } from "../mutations/flat";
+
 
 const defaultFlat = {
-  id: null,
   flatName: "",
-  waterCounterInfo: null,
-  electDay: null,
-  electNight: null,
-  gasCounterInfo: null
+  waterCounterInfo: "",
+  electDay: "",
+  electNight: "",
+  gasCounterInfo: ""
 };
 
 export const InputBlock = () => {
   const [flatInfo, setFlatInfo] = React.useState(defaultFlat);
+
   const [flats, setFlats] = React.useState([]);
 
-  const {data, loading, error} = useQuery(GET_ALL_FLATS);
+  const {data, loading, error, refetch} = useQuery(GET_ALL_FLATS, {pollInterval: 5000});
+  const [newFlat] = useMutation(CREATE_FLAT);
 
   console.log(data);
+
   React.useEffect(() => {
-    console.log(data);
+    if (!loading) {
+      setFlats(data.getAllFlats);
+    }
   }, [data]);
-  console.log(data);
+
+  const getAll = e => {
+    e.preventDefault();
+    refetch();
+  };
+
+  if (loading) {
+    return (
+      <div className={"container"}>
+        Loading ...
+      </div>
+    );
+  }
 
 
   const inputFlatInfo = (e) => {
+    e.preventDefault();
     setFlatInfo({
       ...flatInfo,
       [e.target.name]: e.target.value,
@@ -33,83 +52,97 @@ export const InputBlock = () => {
   };
 
   const sendInfoFromStateToServer = () => {
+    newFlat({
+      variables: {
+        input: flatInfo
+      }
+    }).then(({data}) => {
+      console.log(data);
+      setFlatInfo(defaultFlat);
+    });
 
-    // setFlatInfo(defaultFlat);
   };
 
   return (
     <div>
-      <div className={"title"}>
-        Показание счётчиков:
-      </div>
-
-      <div className={"container"}>
-        <div className={"label"}>
-          Квартира:
+      <form>
+        <div className={"title"}>
+          Показание счётчиков:
         </div>
-        <input
-          className={"input-style"}
-          name={"flatName"}
-          onChange={inputFlatInfo}
-          defaultValue={flatInfo.flatName}
-        />
-      </div>
 
-      <div className={"container"}>
-        <div className={"label"}>
-          Показания счётчика воды:
+        <div className={"container"}>
+          <div className={"label"}>
+            Квартира:
+          </div>
+          <input
+            className={"input-style"}
+            name={"flatName"}
+            onChange={inputFlatInfo}
+            value={flatInfo.flatName}
+          />
         </div>
-        <input
-          className={"input-style"}
-          name={"waterCounterInfo"}
-          onChange={inputFlatInfo}
-          type={"number"}
-        />
-      </div>
 
-      <div className={"container"}>
-        <div className={"label"}>
-          Показания счётчиков электричества:
+        <div className={"container"}>
+          <div className={"label"}>
+            Показания счётчика воды:
+          </div>
+          <input
+            className={"input-style"}
+            name={"waterCounterInfo"}
+            onChange={inputFlatInfo}
+            type={"number"}
+            value={flatInfo.waterCounterInfo}
+          />
         </div>
-        <div className={"label"}>
-          Дневной тариф:
-        </div>
-        <input
-          className={"input-style"}
-          name={"electDay"}
-          onChange={inputFlatInfo}
-          type={"number"}
-        />
 
-        <div className={"label"}>
-          Ночной тариф:
-        </div>
-        <input
-          className={"input-style"}
-          name={"electNight"}
-          onChange={inputFlatInfo}
-          type={"number"}
-        />
-      </div>
+        <div className={"container"}>
+          <div className={"label"}>
+            Показания счётчиков электричества:
+          </div>
+          <div className={"label"}>
+            Дневной тариф:
+          </div>
+          <input
+            className={"input-style"}
+            name={"electDay"}
+            onChange={inputFlatInfo}
+            type={"number"}
+            value={flatInfo.electDay}
+          />
 
-      <div className={"container"}>
-        <div className={"label"}>
-          Показания счётчика газа:
+          <div className={"label"}>
+            Ночной тариф:
+          </div>
+          <input
+            className={"input-style"}
+            name={"electNight"}
+            onChange={inputFlatInfo}
+            type={"number"}
+            value={flatInfo.electNight}
+          />
         </div>
-        <input
-          className={"input-style"}
-          name={"gasCounterInfo"}
-          onChange={inputFlatInfo}
-          type={"number"}
-        />
-      </div>
 
-      <div
-        className={"save-button"}
-        onClick={sendInfoFromStateToServer}
-      >
-        Сохранить
-      </div>
+        <div className={"container"}>
+          <div className={"label"}>
+            Показания счётчика газа:
+          </div>
+          <input
+            className={"input-style"}
+            name={"gasCounterInfo"}
+            onChange={inputFlatInfo}
+            type={"number"}
+            value={flatInfo.gasCounterInfo}
+          />
+        </div>
+
+        <div
+          className={"save-button"}
+          onClick={sendInfoFromStateToServer}
+        >
+          Сохранить
+        </div>
+      </form>
+
 
       <div className={"container"}>
         <div className={"label"}>
@@ -131,20 +164,35 @@ export const InputBlock = () => {
 
       <div
         className={"save-button"}
-        onClick={sendInfoFromStateToServer}
+        onClick={getAll}
       >
         Получить
       </div>
 
-      <div className={"container"}>
+      <div>
         {flats.map((showFlatInfo) => {
           return (
-            <div>
+            <div
+              className={"container"}
+              key={showFlatInfo.id}
+            >
               <div className={"label"}>
-                {showFlatInfo.id}
+                id| {showFlatInfo.id}
               </div>
               <div className={"label"}>
-                {showFlatInfo.flatName}
+                Наименование квартиры| {showFlatInfo.flatName}
+              </div>
+              <div className={"label"}>
+                Счётчик воды| {showFlatInfo.waterCounterInfo}
+              </div>
+              <div className={"label"}>
+                Дневной свет| {showFlatInfo.electDay}
+              </div>
+              <div className={"label"}>
+                Ночной свет| {showFlatInfo.electNight}
+              </div>
+              <div className={"label"}>
+                Счётчик газа| {showFlatInfo.gasCounterInfo}
               </div>
             </div>
           );
