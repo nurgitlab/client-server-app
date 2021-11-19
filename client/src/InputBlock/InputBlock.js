@@ -1,5 +1,6 @@
 import React from "react";
 import "./InputBlock.css";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const defaultFlat = {
@@ -24,10 +25,10 @@ export const InputBlock = () => {
   const sendInfoFromStateToServer = () => {
     setFlatInfo({
       ...flatInfo,
-      id:
+      id: uuidv4()
     })
 
-    setFlatInfo(defaultFlat);
+    // setFlatInfo(defaultFlat);
   };
 
   return (
