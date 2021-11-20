@@ -3,6 +3,7 @@ const {graphqlHTTP} = require("express-graphql");
 const cors = require("cors");
 const schema = require("./schema");
 
+
 const flats = [{
   id: 228,
   flatName: "Квартира ректора СПбГУ(П)",
@@ -14,7 +15,6 @@ const flats = [{
 
 const app = express();
 app.use(cors());
-
 
 const createFlat = (input) => {
   const id = Date.now();

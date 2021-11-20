@@ -21,8 +21,6 @@ export const InputBlock = () => {
   const {data, loading, error, refetch} = useQuery(GET_ALL_FLATS, {pollInterval: 5000});
   const [newFlat] = useMutation(CREATE_FLAT);
 
-  console.log(data);
-
   React.useEffect(() => {
     if (!loading) {
       setFlats(data.getAllFlats);
@@ -42,7 +40,6 @@ export const InputBlock = () => {
     );
   }
 
-
   const inputFlatInfo = (e) => {
     e.preventDefault();
     setFlatInfo({
@@ -60,7 +57,6 @@ export const InputBlock = () => {
       console.log(data);
       setFlatInfo(defaultFlat);
     });
-
   };
 
   return (
@@ -142,7 +138,6 @@ export const InputBlock = () => {
           Сохранить
         </div>
       </form>
-
 
       <div className={"container"}>
         <div className={"label"}>

@@ -1,7 +1,7 @@
 const {buildSchema} = require("graphql")
 
-const schema = buildSchema(`
 
+const schema = buildSchema(`
     type Flat {
         id: ID
         flatName: String
@@ -26,7 +26,6 @@ const schema = buildSchema(`
     type Mutation {
         createFlat(input: FlatInput): Flat
     }
-    
 `)
 
 module.exports = schema
