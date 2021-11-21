@@ -1,8 +1,9 @@
 import React from "react";
-import "./InputBlock.css";
-import { GET_ALL_FLATS } from "../query/flat";
 import { useQuery, useMutation } from "@apollo/client";
+
 import { CREATE_FLAT } from "../mutations/flat";
+import { GET_ALL_FLATS } from "../query/flat";
+import "./InputBlock.css";
 
 
 const defaultFlat = {
@@ -18,7 +19,7 @@ export const InputBlock = () => {
 
   const [flats, setFlats] = React.useState([]);
 
-  const {data, loading, error, refetch} = useQuery(GET_ALL_FLATS, {pollInterval: 5000});
+  const {data, loading, error, refetch} = useQuery(GET_ALL_FLATS, {pollInterval: 50000});
   const [newFlat] = useMutation(CREATE_FLAT);
 
   React.useEffect(() => {

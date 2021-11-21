@@ -1,5 +1,5 @@
-import "./App.css";
 import { InputBlock } from "./InputBlock/InputBlock";
+import "./App.css";
 
 
 export const App = () => {
