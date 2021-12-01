@@ -166,32 +166,42 @@ export const InputBlock = () => {
       </div>
 
       <div>
-        {flats.map((showFlatInfo) => {
-          return (
-            <div
-              className={"container"}
-              key={showFlatInfo.id}
-            >
-              <div className={"label"}>
-                id| {showFlatInfo.id}
-              </div>
-              <div className={"label"}>
-                Наименование квартиры| {showFlatInfo.flatName}
-              </div>
-              <div className={"label"}>
-                Счётчик воды| {showFlatInfo.waterCounterInfo}
-              </div>
-              <div className={"label"}>
-                Дневной свет| {showFlatInfo.electDay}
-              </div>
-              <div className={"label"}>
-                Ночной свет| {showFlatInfo.electNight}
-              </div>
-              <div className={"label"}>
-                Счётчик газа| {showFlatInfo.gasCounterInfo}
-              </div>
-            </div>
-          );
+        {
+          flats.map((showFlatInfo) => {
+            console.log(flats.length)
+            console.log(flats)
+
+            console.log(showFlatInfo)
+
+            if (showFlatInfo.id === null) {
+              return (<></>)
+            } else {
+              return (
+                <div
+                  className={"container"}
+                  key={showFlatInfo.id}
+                >
+                  <div className={"label"}>
+                    id| {showFlatInfo.id}
+                  </div>
+                  <div className={"label"}>
+                    Наименование квартиры| {showFlatInfo.flatName}
+                  </div>
+                  <div className={"label"}>
+                    Счётчик воды| {showFlatInfo.waterCounterInfo}
+                  </div>
+                  <div className={"label"}>
+                    Дневной свет| {showFlatInfo.electDay}
+                  </div>
+                  <div className={"label"}>
+                    Ночной свет| {showFlatInfo.electNight}
+                  </div>
+                  <div className={"label"}>
+                    Счётчик газа| {showFlatInfo.gasCounterInfo}
+                  </div>
+                </div>
+              );
+            }
         })}
       </div>
 

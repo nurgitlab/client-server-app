@@ -5,12 +5,6 @@ const schema = require("./schema");
 
 
 const flats = [{
-  id: 228,
-  flatName: "Квартира ректора СПбГУ(П)",
-  waterCounterInfo: 1000000,
-  electDay: 2000000,
-  electNight: 3000000,
-  gasCounterInfo: 1000000
 }];
 
 const app = express();
